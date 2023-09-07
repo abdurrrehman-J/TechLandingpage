@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@100&family=Rubik:wght@500&family=Simonetta&display=swap');
+
+    /* Essential CSS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body{
+    overflow-x: hidden;
+    color: #000;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+li{
+    list-style: none;
+}
+
+/* Utility Classes  */
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+    /* Header Section  */
+
+#header{
+    height: 8vh;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 5rem;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);    
+}
+
+    /* Logo Section  */
+
+.logo{
+    width: 40%;
+}
+.logo h1{
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+}
+
+    /* Navbar Section  */
+
+.navbar{
+    width: 60%;
+}
+.navbar-list{
+    width: 100%;
+    gap: 3.5rem;
+}
+.navbar-list > li > a{
+    font-size: 1.2rem;
+    position: relative;
+    color: #fff;
+    display: block;
+    height: 2rem;
+}
+.navbar-list > li > a::after{
+    content:" ";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 5%;
+    left: 0;
+    background-color: #fff;
+    transition: 0.3s all linear;
+
+}
+.navbar-list > li > a:hover::after{
+    width: 100%;
+}
+
+.menu-btns{
+    display: none;
+    height: 100%;
+}
+
+.menu-btn{
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+
+    /* Hero Section  */
+
+#main{
+    width: 100%;
+    height: 89vh;
+}
+
+.hero-section{
+    height: 100%;
+    width: 100%;
+}
+
+    /* Hero Section Left Part */
+
+.hero-section-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    gap: 1.8rem;
+    flex-basis: 50%;
+    height: 100%;
+}
+
+.hero-section-left > h2{
+    font-size: 3.5rem;
+    font-family: 'Poppins', sans-serif;
+    width: 80%;
+}
+
+.hero-section-left > p{
+    font-size: 1.2rem;
+    width: 80%;
+}
+
+.hero-section-btns{
+    display: flex;
+    gap: 2rem;
+    width: 80%;
+}
+
+    /* Primary Button Design  */
+
+.primary-btn{
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);    
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    transition: 0.5s all linear;
+    margin-top: 2rem;
+}
+
+.primary-btn:hover{
+    color: #000; 
+}
+
+.primary-btn > span{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: 0.5s all linear;
+} 
+
+.primary-btn:hover > span{
+    width: 100%;
+} 
+
+
+    /* Hero Section Right Part */
+
+.hero-section-right{
+    height: 100%;
+    flex-basis: 50%;
+}
+.hero-section-right-box{
+    border-radius: 20px;
+    position: relative;
+    width: 32rem;
+    height: 32rem;
+}
+.hero-section-image{
+    position: absolute;
+    width:  100%;
+    height: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    filter:saturate(1.5);
+    transition: 1s all ease-in-out;
+    background-color: aqua;
+}
+
+    /* Footer Section */
+
+#footer{
+    color: #fff;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%); 
+    height: 3vh;
+}
+
+
+
+    /* Media Queries */
+
+    /* For Laptop */
+
+@media (max-width:1130px) {
+    .logo{
+        width: 20%;
+    }
+    .navbar{
+        width: 80%;
+    }
+}
+
+    /* For Tablet */
+
+@media (max-width:1024px) {
+    .logo{
+        width: 40%;
+    }
+    .menu-btns{
+        display: flex;
+        align-items: center;
+    }
+    .menu-btn{
+        display: block;
+    }
+    .menu-btns > #hamburger{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btns > #cancel{
+        display: none;
+        z-index: 999;
+        color: #fff;
+    }
+    .navbar{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: block;
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        transition: .5s all linear;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateX(100%);
+        z-index: 3;
+    }
+
+    .navbar-list{
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .active .navbar{
+        transform: translateX(0%);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    #cancel{
+        display: none;
+        z-index: 999;
+        color: #fff;
+    }
+    #hamburger{
+        display: block;
+        z-index: 999;
+        color: #fff;
+    }
+
+    .active  .menu-btns #hamburger{
+        display: none;
+    }
+    .active .menu-btns #cancel{
+        display: block;
+        color: #fff;
+        z-index: 999;
+    }
+    .hero-section{
+        width: 97%;
+        justify-content: space-between;
+    }
+}
+
+
+    /* Mobile View */
+
+@media (max-width:500px) {
+
+    #header{
+        justify-content: space-between;
+        padding: 0 1.5rem;
+    }
+
+    #main{
+        height: auto;
+    }
+
+    #footer{
+        height: auto;
+        margin: 2rem 0;
+    }
+
+    .logo{
+        width: 50%;
+    }
+
+    .logo h1{
+        font-size: 2rem;
+    }
+
+    .hero-section{
+        flex-direction: column-reverse;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .hero-section-left > h2{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .hero-section-left p{
+        text-align: center;
+    }
+
+    .hero-section-btns{
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+    }
+
+}
